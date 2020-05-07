@@ -1,0 +1,80 @@
+<div class="custom-model" [ngClass] = "[display]">
+    <div class="cat-sec">
+      <div class="close-cont" id="close" (click)="closeModel()">
+        <fa-icon [icon]="faTimes"></fa-icon>
+      </div>
+      <h3 class="text-center"> Some paperwork before you get started </h3>
+      <div class="cat-form-cont">
+        <form [formGroup]="typeForm" >
+          <div class="form-group">
+            <label for="email">Select Category</label>
+            <select class="form-control" formControlName="category" required>
+              <option value="9">General Knowledge</option>
+              <option value="10"> Books</option>
+              <option value="11"> Films</option>
+              <option value="17"> Science</option>
+              <option value="18"> Technology</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="email">Number of Questions</label>
+            <select class="form-control" formControlName="questionNumber" required>
+                <option value="5">5</option>
+                <option value="10"> 10</option>
+            </select>    
+          </div>
+          <div class="form-group">
+            <label for="pwd">Select Diffuculty</label>
+            <select class="form-control" formControlName="difficulty" required>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+          <button (click) = "type_submit()" class="btn cust-btn">Go Quiz!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="banner">
+   <div class="container-fluid">
+     <div class="row no-gutters">
+       <div class="col-md-6">
+          <div class="left-banner">
+            <div class="banner-img">
+              <img src="../assets/quiz-vector - Copy.png" alt="">
+            </div>
+          </div>
+       </div>
+       <div class="col-md-6">
+        <div class="right-banner">
+          <div class="banner-txt">
+            <h3 class="text-center"> Feeling Bored? Take a Quiz! </h3>
+            <div class="banner-para">
+              <p>Test your knowledge with Quizzo</p>
+              <button (click)="displayModel()" class="btn cust-btn" id="startBtn">Start</button>
+            </div>
+          </div>
+        </div>
+       </div>
+     </div>
+   </div>
+  </div>
+  <div class="about-sec">
+    <div class="about-title">
+      <h3 class="text-center">About This Project</h3>
+    </div>
+    <div class="about-para">
+      <p>This project is developed using Angular. This project uses the <a href="https://opentdb.com">https://opentdb.com</a> api for fetching the questions.
+        The sole purpose of this project is get a hang of Angular development. Use of observables, routing, etc have been used in this project.
+        The users can also enjoy the quiz and test their knowledge.</p>
+    </div>
+
+  </div>
+  <div class="footer-sec">
+    <div class="footer-text">
+      <p>Made with <fa-icon [icon]="faHeart" class="color"></fa-icon> by Shahid Mansuri </p>
+    </div>
+  </div>

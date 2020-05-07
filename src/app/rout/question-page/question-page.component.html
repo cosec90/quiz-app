@@ -1,0 +1,39 @@
+<div class="custom-model2" [ngClass] = [display]>
+    <div class="end-cont">
+      <div class="end-text-cont">
+        <p class="text-center">Congratulations</p>
+        <h4 class="text-center">Your Score</h4>
+        <h5 class="text-center">{{score_flag}}/{{totalQuestions}}</h5>
+        <div class="end-img-cont">
+          <img src="../assets/end.jpg" alt="">
+        </div>
+        <a routerLink="/landing"><button class="btn end-btn" >End</button></a>
+        
+      </div>
+    </div>
+  </div>
+<div class="questions-cont">
+    <div class="questions-title-cont">
+        <h3 class="text-center">Questions</h3>
+    </div>
+    
+        <div class="question-form-cont">
+            <form [formGroup]="userForm" (ngSubmit)="xyz()">
+                <div class="questions-inner">
+                    <p><span>{{flag}}</span> {{questions}} </p>
+                    <div class="radio-inline" *ngFor ="let a of incorrectAns">
+                        <input type="radio" class=" radio-cust" formControlName="optradio" [value]="a" required >{{a}}
+                       
+                    </div>
+                    <input type="radio" class=" radio-cust" formControlName="optradio" [value]="correctAns" >{{correctAns}}
+                   
+                </div>
+                <button class="cust-btnq btn" type="submit">Next</button>
+            </form>        
+        </div>   
+</div>
+<div class="footer-sec">
+  <div class="footer-text">
+    <p>Made with <fa-icon [icon]="faHeart" class="color"></fa-icon> by Shahid Mansuri </p>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+.navbar{
+    height: 80px;
+    background-color: rgba(193, 206, 254,0.3);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    /* background-color: #A3BFDF; */
+    
+}
+.navbar li{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.nav-link{
+    color: #252E47;
+}
+.navbar-brand{
+    font-size: 40px;
+    color: #252E47;
+}
