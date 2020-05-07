@@ -25,6 +25,7 @@ export class QuestionPageComponent implements OnInit {
   public ans:string;
   public display = 'close';
   public faHeart = faHeart;
+  public repo: any;
   userForm = new FormGroup({
     optradio: new FormControl()
   })
