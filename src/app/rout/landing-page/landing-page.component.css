@@ -163,7 +163,7 @@
     }
     .banner-para p{
         font-size: 17px;
-        transform: translateX(30%);
+        transform: translateX(25%);
     }
     .banner-para button{
         position: relative;
