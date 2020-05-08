@@ -3,7 +3,7 @@ import { QuizService } from 'src/app/services/quiz.service';
 import { Iquiz } from 'src/app/quiz';
 import {Result} from 'src/app/results';
 import { log } from 'util';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {faHeart} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -27,17 +27,17 @@ export class QuestionPageComponent implements OnInit {
   public faHeart = faHeart;
   public repo: any;
   userForm = new FormGroup({
-    optradio: new FormControl()
+    optradio: new FormControl('',Validators.required)
   })
   constructor(private quizServ: QuizService) { 
     this.totalQuestions =  this.quizServ.amount;
   }
 
   ngOnInit(): void {
-    console.log(this.quizServ.url);
     this.quizServ.callingFunc()
     .subscribe(data => {this.res = data.response_code;
       this.question_list = data.results;
+      this.score_flag = 0;
       this.some_func();
     });
   }
@@ -48,17 +48,22 @@ export class QuestionPageComponent implements OnInit {
       this.correctAns = this.question_list[i].correct_answer;
       this.incorrectAns = this.question_list[i].incorrect_answers;
       this.flag++;
-      console.log(i);
+      // console.log(i);
       break;
     }
     
   }
   xyz(){
-    
-    if(this.userForm.get('optradio').value == this.correctAns){
+    this.ans = this.userForm.get('optradio').value;
+    if(this.ans == this.correctAns){
       this.score_flag++;
+      
+      this.userForm.get('optradio').reset();
     }
-    if(this.flag == this.question_list.length){
+    else{
+      console.log(this.score_flag);
+    }
+    if(this.flag == this.totalQuestions){
       this.display = 'open';
     }
     else{

@@ -15,25 +15,21 @@
 <div class="questions-cont">
     <div class="questions-title-cont">
         <h3 class="text-center">Questions</h3>
-    </div>
-    
+    </div>   
         <div class="question-form-cont">
             <form [formGroup]="userForm" (ngSubmit)="xyz()">
                 <div class="questions-inner">
+                  <!-- <button class="btn btn-primary" (click) = "start_api()"> Hit api</button> -->
                     <p><span>{{flag}}</span> {{questions}} </p>
                     <div class="radio-inline" *ngFor ="let a of incorrectAns">
                         <input type="radio" class=" radio-cust" formControlName="optradio" [value]="a" required >{{a}}
                        
                     </div>
-                    <input type="radio" class=" radio-cust" formControlName="optradio" [value]="correctAns" >{{correctAns}}
+                    <input type="radio" class=" radio-cust" formControlName="optradio" [value]="correctAns" required >{{correctAns}}
                    
                 </div>
                 <button class="cust-btnq btn" type="submit">Next</button>
             </form>        
         </div>   
 </div>
-<div class="footer-sec">
-  <div class="footer-text">
-    <p>Made with <fa-icon [icon]="faHeart" class="color"></fa-icon> by Shahid Mansuri </p>
-  </div>
-</div>
+

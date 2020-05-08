@@ -6,7 +6,7 @@ import { Validators } from '@angular/forms';
 import { PermissionsService } from 'src/app/permissions.service';
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
 import {faHeart} from '@fortawesome/free-solid-svg-icons';
-
+import {faBars} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -19,6 +19,7 @@ export class LandingPageComponent implements OnInit {
   public difficult: any;
   public faTimes = faTimes;
   public faHeart = faHeart;
+  public faBars =  faBars;
     typeForm = new FormGroup({
     questionNumber: new FormControl('',Validators.required),
     category: new FormControl('',Validators.required),

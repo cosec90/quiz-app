@@ -33,7 +33,7 @@
     height: auto;
     position: relative;
     top: 0;
-    left: 0%;
+    left: 5%;
 }
 .banner-img{
     width: 300px;
@@ -105,14 +105,17 @@
 .footer-sec{
     width: 100%;
     background-color: #333333;
-    height: 150px;
+    height: 160px;
+    
 }
 .footer-text{
-    display: flex;
+    display: block;
     width: 250px;
-    height: 150px;
-    margin: 0 auto;
-    align-items: center;
+    height: auto;
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .footer-text p i{
     color: red;
@@ -160,11 +163,11 @@
     }
     .banner-para p{
         font-size: 17px;
-       transform: translateX(20%);
+        transform: translateX(30%);
     }
     .banner-para button{
         position: relative;
-        left: 50%;
+        left: 55%;
         top: 0;
         /* transform: translateX(-50%); */
     }
