@@ -55,21 +55,28 @@ export class QuestionPageComponent implements OnInit {
   }
   xyz(){
     this.ans = this.userForm.get('optradio').value;
-    if(this.ans == this.correctAns){
-      this.score_flag++;
-      
-      this.userForm.get('optradio').reset();
+    if(this.ans !== '' && this.ans !== null){
+      if(this.ans == this.correctAns){
+        this.score_flag++;
+        this.userForm.get('optradio').setValue('');
+        if(this.flag == this.totalQuestions){
+          this.display = 'open';
+        }
+        this.userForm.get('optradio').setValue('');
+        this.some_func();
+      }
+      else{
+        this.userForm.get('optradio').setValue('');
+        if(this.flag == this.totalQuestions){
+          this.display = 'open';
+        }
+        this.some_func();
+        console.log(this.ans);
+      }
     }
-    else{
-      console.log(this.score_flag);
+    else{ 
+      alert("Enter the form");
     }
-    if(this.flag == this.totalQuestions){
-      this.display = 'open';
-    }
-    else{
-      this.some_func();
-    }
-    
     
   } 
 }
