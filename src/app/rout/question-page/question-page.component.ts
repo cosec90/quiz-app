@@ -75,7 +75,7 @@ export class QuestionPageComponent implements OnInit {
       }
     }
     else{ 
-      alert("Enter the form");
+      alert("Enter the answer");
     }
     
   } 
