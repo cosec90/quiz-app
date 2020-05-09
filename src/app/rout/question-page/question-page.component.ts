@@ -26,6 +26,7 @@ export class QuestionPageComponent implements OnInit {
   public display = 'close';
   public faHeart = faHeart;
   public repo: any;
+  public showQuestionCont = 'close'
   userForm = new FormGroup({
     optradio: new FormControl('',Validators.required)
   })
@@ -38,6 +39,9 @@ export class QuestionPageComponent implements OnInit {
     .subscribe(data => {this.res = data.response_code;
       this.question_list = data.results;
       this.score_flag = 0;
+      if(this.question_list !== ''){
+        this.showQuestionCont = 'open'
+      }
       this.some_func();
     });
   }

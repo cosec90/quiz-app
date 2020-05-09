@@ -15,11 +15,10 @@
 <div class="questions-cont">
     <div class="questions-title-cont">
         <h3 class="text-center">Questions</h3>
-    </div>   
-        <div class="question-form-cont">
+    </div>
+        <div class="question-form-cont" [ngClass] = [showQuestionCont]>
             <form [formGroup]="userForm" (ngSubmit)="xyz()">
                 <div class="questions-inner">
-                  
                     <p><span>{{flag}}</span> {{questions}} </p>
                     <div class="radio-inline" *ngFor ="let a of incorrectAns">
                         <input type="radio" class=" radio-cust" formControlName="optradio" [value]="a" required >{{a}}
